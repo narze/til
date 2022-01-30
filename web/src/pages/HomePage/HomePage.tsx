@@ -1,16 +1,23 @@
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
+import TilPostsCell from 'src/components/TilPostsCell'
 
 const HomePage = () => {
   return (
     <>
       <MetaTags title="Home" description="Home page" />
 
-      <h1>TIL</h1>
-      <p>List of #TodayILearned</p>
-      <p>
-        <Link to={routes.posts()}>Posts</Link>
-      </p>
+      <div className="p-4">
+        <TilPostsCell />
+        <p className="mt-4">
+          <Link
+            to={routes.newPost()}
+            className="p-2 rounded bg-slate-500 text-white"
+          >
+            Create new Post
+          </Link>
+        </p>
+      </div>
     </>
   )
 }
